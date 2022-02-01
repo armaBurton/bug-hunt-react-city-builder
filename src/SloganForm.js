@@ -6,7 +6,7 @@ export default function SloganForm(props) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    props.slogans.push(sloganInput);
+    // props.slogans.push(sloganInput);
     props.setSlogans([...props.slogans, sloganInput]);
     setSloganInput('');
   }
