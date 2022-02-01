@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 export default function SloganForm(props) {
   const [sloganInput, setSloganInput] = useState([]);
     
@@ -5,7 +7,7 @@ export default function SloganForm(props) {
     e.preventDefault();
 
     props.slogans.push(sloganInput);
-
+    props.setSlogans([...props.slogans, sloganInput]);
     setSloganInput('');
   }
 
@@ -13,7 +15,7 @@ export default function SloganForm(props) {
     <section>
       <form onSubmit={handleSubmit}>
         Add a slogan to the list!
-        <input value={sloganInput} onChange={e => setSloganInput(value)}/>
+        <input value={sloganInput} onChange={(e) => setSloganInput(e.target.value)}/>
         <button>Submit</button>
       </form>
     </section>
